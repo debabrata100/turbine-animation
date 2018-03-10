@@ -1,0 +1,62 @@
+/*------------------Turbine-----------------*/
+.turbine-container{
+    height: 210px;
+    width: 210px;
+    position: absolute;
+    top:0px;
+    left:300px;
+    /*border:1px solid #fff;*/
+}
+.turbine{
+    position: absolute;
+    height: 20px;
+    top:95px;
+    width:200px;
+    background: #fff;
+    /*box-shadow: 10px 10px 0px 20px #000 inset;*/
+    /*box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;*/
+    border-radius: 10px 10px 10px 10px;
+    /*animation: start-turbine 0.5s linear 7s infinite reverse,
+    charged 0.5s linear 7s infinite reverse,spin 0.5s linear 8s infinite reverse,
+    animation-fill-mode: forwards;*/
+    animation: start-turbine 1.5s linear 6.6s 1 normal,charged 0.5s linear 6.6s 1 reverse,spin 0.5s linear 8.1s infinite reverse;
+    animation-fill-mode: forwards;
+    transform: rotate(-26deg);
+}
+@keyframes start-turbine {
+    0%{transform: rotate(-26deg);}
+    100%{transform: rotate(-360deg);}
+}
+@keyframes charged {
+  0%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 2px 2px #fff;}
+  50%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 3px 4px #fff;}
+  100%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;}
+}
+@keyframes spin {
+    0%{transform: rotate(0deg);}
+    50%{transform: rotate(180deg);}
+    50.0001%{transform: rotate(-180deg);}
+    100%{transform: rotate(0deg);}
+}
+.turbine::before{
+    position: absolute;
+    content: '';
+    height: 20px;
+    width:200px;
+    background: #fff;
+    transform: rotate(90deg);
+    border-radius: 10px 10px 10px 10px;
+    animation: charged 0.5s linear 6.6s 1 reverse;
+    animation-fill-mode: forwards;
+    /*box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;*/
+}
+.turbine::after{
+    position: absolute;
+    content: '';
+    left: 48%;
+    top: 24%;
+    height:10px;
+    width: 10px;
+    border-radius: 100%;
+    background: #000;
+}

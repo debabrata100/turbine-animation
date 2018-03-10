@@ -1,0 +1,96 @@
+.turbine-system {
+  position: relative;
+  margin: auto;
+  height: 600px;
+  width: 80%;
+  border: 1px solid #fff;
+}
+
+.initial-bar {
+  position: absolute;
+  height: 100px;
+  width: 10px;
+  background-color: #fff;
+  transform: rotate(-40deg);
+  left: 30px;
+}
+
+.second-bar {
+  position: absolute;
+  top: 0px;
+  left: 135px;
+  transform: rotate(90deg);
+  height: 195px;
+  width: 10px;
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.small-ball {
+  position: absolute;
+  left: 10px;
+  top:0px;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+  animation: small-ball 3s linear 1s 1 normal;
+  animation-fill-mode: forwards;
+}
+@keyframes small-ball {
+    0%{left:10px;top:0px}
+    90%{left:70px;top:73px}
+    100%{left:90px;top:73px}
+}
+.big-ball {
+  position: absolute;
+  left: 100px;
+  top: 53px;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background-color: #fff;
+  animation: big-ball 3s linear 4s 1 normal,after-switch-on 1s linear 7s 1 normal;
+  animation-fill-mode: forwards;
+  z-index: 100;
+}
+@keyframes big-ball {
+    0%{left:100px;}
+    50%{left:239px;top:53px;}
+    80%{left:289px;top:98px}
+    100%{left:194px;top:250px}
+}
+@keyframes after-switch-on {
+    0%{left:194px;top:250px}
+    99%{left:194px;top:430px}
+    100%{left:194px;top:428px}
+}
+.connected-wire {
+  height: 247px;
+  width: 672px;
+  position: absolute;
+  top: 221px;
+  left: 129px;
+  border: 5px solid #fff;
+  border-top: 0px;
+  border-radius: 5px 0px 0px 0px;
+  border-right: 0px;
+  /*box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;*/
+  /*animation: wire-charged 2s linear 8s infinite normal;*/
+  animation-fill-mode: forwards;
+}
+@keyframes wire-charged {
+  0%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 2px 2px #fff;}
+  50%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 3px 4px #fff;}
+  100%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;}
+}
+
+.connected-wire:after {
+  content: '';
+    position: absolute;
+    height: 86px;
+    width: 5px;
+    left: 667px;
+    top: 162px;
+    background-color: #fff;
+}

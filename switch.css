@@ -1,0 +1,75 @@
+.switch-socket{
+  height: 210px;
+  width: 210px;
+  position: absolute;
+  top: 175px;
+  left: 143px;
+  /*border: 1px solid #fff;*/
+  transform: rotateX(-24deg);
+}
+.socket {
+      position: relative;
+      height: 100px;
+      width: 50px;
+      border: 2px solid #fff;
+      padding: 20px;
+      border-radius: 10px;
+      transform: skewX(20deg);
+      background-color: #855E42;
+    }
+
+    .switch-container {
+      position: absolute;
+      height: 110px;
+      width: 60px;
+      border: 1px solid #585756;
+      border-radius: 10px;
+      background-color: red;
+      left: 15%;
+      top: 11%;
+      transform: rotate(180deg);
+    }
+
+    .switch {
+      position: relative;
+      height: 96px;
+      width: 50px;
+      border-radius: 10px;
+      border: 1px solid #EF4F4F;
+      box-shadow: 0px 0px 9px 1px;
+      top: 11%;
+      animation: switch-on 0.5s linear 7s 1 normal;
+      animation-fill-mode: forwards;
+    }
+    @keyframes switch-on {
+        0%{top:11%}
+        100%{top:0}
+    }
+
+    .switch:before {
+      content: '';
+      position: absolute;
+      height: 19px;
+      width: 4px;
+      background-color: #fff;
+      left: 45%;
+      top: 10%;
+    }
+
+    .switch:after {
+      content: '';
+      position: absolute;
+      height: 9px;
+      width: 15px;
+      border: 5px solid #fff;
+      border-radius: 100%;
+      top: 70%;
+      left: 25%;
+    }
+    /*.switch-mark{
+        position: absolute;
+        height:10px;
+        width:100px;
+        border-bottom: 0.5px solid #000;
+        border-radius: 20px;
+    }*/

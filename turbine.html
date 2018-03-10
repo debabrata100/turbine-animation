@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Turbine</title>
+    <style media="screen">
+        body{
+          background-color: #000;
+          margin-top:200px;
+        }
+        div{
+          margin: auto;
+        }
+        .turbine{
+          position: relative;
+            height: 20px;
+            width:200px;
+            background: #fff;
+            /*box-shadow: 10px 10px 0px 20px #000 inset;*/
+            /*box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;*/
+            border-radius: 10px 10px 10px 10px;
+            animation: spin 0.5s linear 3s infinite reverse,charged 2s;
+            animation-fill-mode: forwards;
+        }
+        .turbine::before{
+            position: absolute;
+            content: '';
+            height: 20px;
+            width:200px;
+            background: #fff;
+            transform: rotate(90deg);
+            border-radius: 10px 10px 10px 10px;
+            animation: charged 2s;
+            animation-fill-mode: forwards;
+            /*box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;*/
+        }
+        .turbine::after{
+            position: absolute;
+            content: '';
+            left: 48%;
+            top: 24%;
+            height:10px;
+            width: 10px;
+            border-radius: 100%;
+            background: #000;
+        }
+        @keyframes charged {
+          0%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 2px 2px #fff;}
+          50%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 3px 4px #fff;}
+          100%{box-shadow: 0 0 3px 2px rgba(121, 77, 255, 0.9), 0 0 5px 7px #fff;}
+        }
+        @keyframes spin {
+            0%{transform: rotate(0deg);}
+            50%{transform: rotate(180deg);}
+            50.0001%{transform: rotate(-180deg);}
+            100%{transform: rotate(0deg);}
+        }
+    </style>
+  </head>
+  <body>
+      <div class="turbine">
+
+      </div>
+  </body>
+</html>
